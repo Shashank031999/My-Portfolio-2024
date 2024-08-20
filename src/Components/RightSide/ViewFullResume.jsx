@@ -18,7 +18,7 @@ const ViewFullResume = () => {
   return (
     <Box my={10}>
      <Typography sx={downloadResume} >
-     <a style={{color:"white"}} href={require("../../assets/Shashank_gupta_resume.pdf")} download="Shashank_Gupta_Resume.pdf">
+     <a style={{color:"white"}} href={require("../../assets/ShashankGupta_resume_2024.pdf")} download="Shashank_Gupta_Resume.pdf">
         View Full Resume <ArrowOutwardIcon fontSize="small" />
         </a>
      </Typography> 
