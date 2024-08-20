@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 
 const positionDiscription = {
@@ -36,10 +36,21 @@ const Footer = () => {
         },
       }}
     >
+    <Grid container>
+      <Grid item sm={10}>
       <Typography sx={experienceDetailsTypography}>
         Developed in ReactJS and coded in Visual Studio Code by me
         truly. Built with Material UI CSS, deployed with Vercel.
-      </Typography>
+      </Typography></Grid>
+      <Grid item sm={2}>
+      <img
+          src={require("../../Images/ramadan-without_background.gif")}
+          alt="loading..."
+        style={{width:"4rem"}}
+        />
+      </Grid>
+    </Grid>
+      
     </Box>
   );
 };
