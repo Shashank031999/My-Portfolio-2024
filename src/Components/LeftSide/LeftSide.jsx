@@ -91,12 +91,11 @@ const LeftSide = ({ fromRightSideComp }) => {
           also Work on Backend with Node JS, Express JS, Mongodb. 
         </Typography>
         <Typography variant="h6" sx={DetailsTypography}>
-          I  also use some frontend and backend librarys like Materil UI, Tailwind, CSS, SCSS React Redux Toolkit ,React Recoil, TanStack Query , GraphQL, React Strap, Bootstrap, Material Tables, Axios, Axios Intersaptors, Mutler, Json web token, Array to CSV converter, Formic Library, .
+          I  also use some frontend and backend  libraries like Material UI, Tailwind, CSS, SCSS React Redux Toolkit ,React Recoil, TanStack Query , GraphQL, React Strap, Bootstrap, Material Tables, Axios, Axios Intersaptors, Mutler, Json web token, Array to CSV converter, Formic Library, .
 
         </Typography>
         <Typography variant="h6" sx={DetailsTypography}>
-          I  also use some graphs based library like Apex Charts , Chart JS Google Chart, Ant Charts, also use LeafLet for map implementation.
-
+          I  also use some graphs based libraries like Apex Charts , Chart JS Google Chart, Ant Charts, also use LeafLet for map implementation.
         </Typography>
         <Typography variant="h6" sx={DetailsTypography}>
          I also have knowledge of NectJS library.
