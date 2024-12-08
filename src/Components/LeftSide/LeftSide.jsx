@@ -1,10 +1,13 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import ViewInArIcon from "@mui/icons-material/ViewInAr";
 import { Link } from "react-router-dom";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
 
 const IconTypography = { padding: "0px 12px 0px 0px", cursor: "pointer" };
 
@@ -42,8 +45,24 @@ const boxLeftSide = {
 };
 
 const linkCss = { textDecoration: "none", color: "white" };
+gsap.registerPlugin(useGSAP);
+
 
 const LeftSide = ({ fromRightSideComp }) => {
+
+  const container = useRef();
+
+  // GSAP animation hook
+  useGSAP(
+    () => {
+      // Animation: Move the box 360px along the x-axis
+      gsap.to(".box", { rotation: "+=360", duration: 10});
+
+      // gsap.to(circle.current, { rotation: "-=360", duration: 3 });
+    
+    },
+    { scope: container } // Scoped container for the animation
+  );
   
   const NavTypographyAbout = {
     padding: "5px",
@@ -76,8 +95,10 @@ const LeftSide = ({ fromRightSideComp }) => {
         flexDirection="column"
         sx={boxLeftSide}
       >
-        <Typography variant="h3" sx={HeadingTypography}>
+        <Typography variant="h3" sx={HeadingTypography} ref={container}>
+        
           Shashank Gupta
+        
         </Typography>
         <Typography variant="h6" sx={EmailTypography}>
           guptashashank31999@gmail.com
