@@ -119,7 +119,20 @@ console.log('yValues', yValues);
         flexDirection="column"
         sx={boxLeftSide}
       >
-      <img src={bees}  width={200} height={150} ref={imageRef} onClick={onImgClick} />
+
+     
+
+      
+      <img src={bees}  ref={imageRef} onClick={onImgClick}  style={{
+        width:"170px",
+        height:"170px",
+      borderRadius:"100px",
+
+        backgroundColor:"#0F172A",
+      backgroundColor:"transparent", 
+      boxShadow: "rgb(255, 255, 255) 0px 0px 20px, rgb(255, 255, 255) 0px 0px 40px, rgb(255, 255, 255) 0px 0px 60px, rgb(255, 255, 255) 0px 0px 80px",
+      }}/>
+    
         <Typography variant="h3" sx={HeadingTypography} ref={container}>
         
           Shashank Gupta

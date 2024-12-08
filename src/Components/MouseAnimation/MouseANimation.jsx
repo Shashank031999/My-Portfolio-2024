@@ -6,7 +6,7 @@ const MouseANimation = forwardRef((props, ref) => {
     return (
       
       <div
-       ref={ref}
+      //  ref={ref}
       
       style={{
       width:"50px",

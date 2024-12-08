@@ -36,11 +36,11 @@ const ParentComponents = () => {
 
   useEffect(()=>{
     console.log("test")
-    window.addEventListener('mousemove', cursorFun);
+    // window.addEventListener('mousemove', cursorFun);
 
-    return () => {
-      window.removeEventListener('mousemove', cursorFun)
-    }
+    // return () => {
+    //   window.removeEventListener('mousemove', cursorFun)
+    // }
   },[])
   return (
     <>
