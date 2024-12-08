@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
@@ -7,7 +7,7 @@ import ViewInArIcon from "@mui/icons-material/ViewInAr";
 import { Link } from "react-router-dom";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-
+import bees from '../../Images/bee.png'
 
 const IconTypography = { padding: "0px 12px 0px 0px", cursor: "pointer" };
 
@@ -50,19 +50,32 @@ gsap.registerPlugin(useGSAP);
 
 const LeftSide = ({ fromRightSideComp }) => {
 
+  const randomX = gsap.utils.random(-500, 500,100)
+  const rotateX = gsap.utils.random(-360, 360, 30)
+  const randomY = gsap.utils.random(-200, 200, 30)
+
   const container = useRef();
+  const imageRef = useRef(null)
+
+  const [xValues, setXvalues] = useState(0)
+  const [yValues, setYvalues] = useState(0)
+  // const [randomY, setRandomY] = useState()
+  const [rotate, setRotate] = useState(0)
 
   // GSAP animation hook
   useGSAP(
     () => {
       // Animation: Move the box 360px along the x-axis
-      gsap.to(".box", { rotation: "+=360", duration: 10});
-
-      // gsap.to(circle.current, { rotation: "-=360", duration: 3 });
-    
-    },
-    { scope: container } // Scoped container for the animation
-  );
+      gsap.to(imageRef.current, 
+        { x: `${xValues}vw`, 
+          y: `${yValues}vh`,
+          duration: 2,
+           
+         
+        });
+    }
+   
+  ,[xValues, yValues]);
   
   const NavTypographyAbout = {
     padding: "5px",
@@ -85,6 +98,17 @@ const LeftSide = ({ fromRightSideComp }) => {
     fontSize: fromRightSideComp == "projects" ? "1.5rem" : "1rem",
   };
 
+
+const onImgClick = () => {
+  const randomNumberX = Math.floor(Math.random() * (70 - 5 + 1)) + 5;
+  const randomNumberY = Math.floor(Math.random() * (70 - 5 + 1)) + 5;
+
+        setXvalues(randomNumberX)
+        setYvalues(randomNumberY)
+}
+
+console.log('xValues', xValues);
+console.log('yValues', yValues);
   return (
     <>
       <Box
@@ -95,6 +119,7 @@ const LeftSide = ({ fromRightSideComp }) => {
         flexDirection="column"
         sx={boxLeftSide}
       >
+      <img src={bees}  width={200} height={150} ref={imageRef} onClick={onImgClick} />
         <Typography variant="h3" sx={HeadingTypography} ref={container}>
         
           Shashank Gupta
